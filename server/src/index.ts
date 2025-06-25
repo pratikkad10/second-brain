@@ -5,7 +5,7 @@ import cookieParser from "cookie-parser";
 import userRoutes from "./routes/user.routes";
 dotenv.config();
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT ?? 5000;
 connectDB();
 
 //middlewares
