@@ -30,3 +30,4 @@ const linkSchema = new Schema({
 });
 
 export const linkModel = model("Link", linkSchema);
+
