@@ -21,7 +21,7 @@ const sizeClass = {
     lg: "text-lg px-6 py-4 rounded-lg"
 }
 
-const defaultStyle: string = "flex items-center gap-2"
+const defaultStyle: string = "flex items-center gap-2 font-light cursor-pointer"
 
 export const Button = (props: ButtonInterface) => {
     return  <button 
