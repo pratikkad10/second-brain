@@ -1,0 +1,25 @@
+interface InputInterface {
+    type: string,
+    placeholder: string,
+    name: string,
+    value?: string,
+    label?: string
+    onChange?: () => void
+    size: "sm" | "md" | "lg"
+}
+
+const sizeStyles = {
+    sm: "",
+    md: "",
+    lg: ""
+}
+
+const Input = (props: InputInterface) => {
+    return (
+        <input 
+        className={`${sizeStyles[props.size]} outline-none border border-custom-light-800 rounded-md px-4 py-2`}
+        type={props.type} placeholder={props.placeholder} required value={props.value} name={props.name} onChange={props.onChange} />
+    )
+}
+
+export default Input
