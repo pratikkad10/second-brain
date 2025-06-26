@@ -1,11 +1,14 @@
-import React from 'react'
 import Card from './ui/Card'
 const Cards = () => {
   return (
-    <div  className='flex  gap-4'>
+    <div  className='flex gap-8 flex-wrap justify-center'>
         <Card link={"https://www.youtube.com/watch?v=0BDt08x-De8"} title={"youtube video by harkirat"} type={"youtube"}  />
-        <Card link={"https://x.com/jod_insane/status/1937568249509535885/photo/1"} title={"tweet bt solana"} type={"twitter"}  />
-    
+        <Card link={"https://www.youtube.com/watch?v=0BDt08x-De8"} title={"youtube video by harkirat"} type={"youtube"}  />
+        <Card link={"https://www.youtube.com/watch?v=0BDt08x-De8"} title={"youtube video by harkirat"} type={"youtube"}  />
+        <Card link={"https://www.youtube.com/watch?v=0BDt08x-De8"} title={"youtube video by harkirat"} type={"youtube"}  />
+        <Card link={"https://www.youtube.com/watch?v=0BDt08x-De8"} title={"youtube video by harkirat"} type={"youtube"}  />
+        <Card link={"https://www.youtube.com/watch?v=0BDt08x-De8"} title={"youtube video by harkirat"} type={"youtube"}  />
+        {/* <Card link={"https://x.com/vercel/status/1937677396850913633/photo/1"} title={"Vercel"} type={"twitter"}  /> */}
     </div>
   )
 }
