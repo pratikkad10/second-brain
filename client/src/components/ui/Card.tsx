@@ -12,7 +12,7 @@ interface propInterface{
 
 const Card = ({ title, link, type, tags }:propInterface) => {
     return (
-        <div className='max-w-76 min-h-48 min-w-72 bg-custom-light-200 shadow rounded-md p-4'>
+        <div className='max-w-76 min-h-48 min-w-72 bg-custom-light-200 shadow-md border-b-2 border-slate-300 rounded-md p-4'>
             <div className='flex items-center justify-between'>
                 <div className='flex items-center gap-2'>
                     <span><ShareIcon size='md' /></span>
