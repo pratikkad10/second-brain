@@ -2,7 +2,7 @@ import type { ReactElement } from "react"
 
 interface ButtonInterface {
     variant: "primary" | "secondary",
-    onClick(): () => void,
+    onClick?: () => void,
     size: "sm" | "md" | "lg",
     text: string,
     startIcon?: ReactElement,
@@ -11,7 +11,7 @@ interface ButtonInterface {
 }
 
 const variantClasses = {
-    primary: "primary bg-custom-purple-600 text-white",
+    primary: "primary bg-custom-purple-600 text-white ",
     secondary: "secondary bg-custom-purple-300 text-custom-purple-600"
 }
 
@@ -21,7 +21,7 @@ const sizeClass = {
     lg: "text-lg px-6 py-4 rounded-lg"
 }
 
-const defaultStyle: string = "flex items-center gap-2 font-light cursor-pointer"
+const defaultStyle: string = "flex items-center gap-2 font-light cursor-pointer text-center"
 
 export const Button = (props: ButtonInterface) => {
     return  <button 
