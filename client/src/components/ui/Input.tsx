@@ -5,7 +5,8 @@ interface InputInterface {
     value?: string,
     label?: string
     onChange?: () => void
-    size: "sm" | "md" | "lg"
+    size: "sm" | "md" | "lg",
+    reference?:any
 }
 
 const sizeStyles = {
@@ -16,7 +17,7 @@ const sizeStyles = {
 
 const Input = (props: InputInterface) => {
     return (
-        <input 
+        <input ref={props.reference}
         className={`${sizeStyles[props.size]} outline-none border border-custom-light-800 rounded-md px-4 py-2`}
         type={props.type} placeholder={props.placeholder} required value={props.value} name={props.name} onChange={props.onChange} />
     )
