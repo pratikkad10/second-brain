@@ -1,7 +1,7 @@
 import type { ReactElement } from "react"
 
 interface ButtonInterface {
-    variant: "primary" | "secondary",
+    variant: "primary" | "secondary" | "danger",
     onClick?: () => void,
     size: "sm" | "md" | "lg",
     text: string,
@@ -12,7 +12,8 @@ interface ButtonInterface {
 
 const variantClasses = {
     primary: "primary bg-custom-purple-600 text-white ",
-    secondary: "secondary bg-custom-purple-300 text-custom-purple-600"
+    secondary: "secondary bg-custom-purple-300 text-custom-purple-600",
+    danger: "bg-red-500 hover:bg-red-400 text-white"
 }
 
 const sizeClass = {
