@@ -16,7 +16,7 @@ export const tagmodel = model("Tag", tagSchema);
 
 const contentSchema = new Schema({
   link: { type: String, required: true },
-  type: { type: String, enum: ['image', 'video', 'article', 'audio'], required: true },
+  type: { type: String, enum: ['youtube', 'twitter'], required: true },
   title: { type: String, required: true },
   tags: [{ type: Types.ObjectId, ref: 'Tag' }],
   userId: { type: Types.ObjectId, ref: 'User', required: true },
