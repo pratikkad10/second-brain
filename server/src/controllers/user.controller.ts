@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { contentModel, linkModel, userModel } from "../models/user.model";
 import { hashString } from "../utils/round";
-
+import cookies from 'cookie-parser';
 
 
 export const addcontent=async (req: Request,res: Response): Promise<void>=>{
@@ -150,7 +150,7 @@ export const fetchsharedEntry =async (req:Request, res:Response)=>{
             message:"error in fetch content"
         })}
 
-        const content = await contentModel.findOne({
+        const content = await contentModel.find({
             userId:link?.userId
         })
 
@@ -180,4 +180,22 @@ export const fetchsharedEntry =async (req:Request, res:Response)=>{
             error
         })
     }
+}
+
+export const logout = async (req: Request, res: Response)=>{
+    try {
+    
+    res.cookie("token", "", { expires: new Date(0), httpOnly: true });
+
+    res.status(200).json({
+      success:true,
+      message:"User logged Out"
+    })
+  } catch (error) {
+    res.status(400).json({
+      message: "can't logout",
+      error:error,
+      success: false
+    });
+  }
 }
