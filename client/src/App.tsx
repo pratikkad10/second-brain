@@ -1,50 +1,26 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Home from "./pages/Home"
+import Dashboard from "./pages/Dashboard"
+import Signin from "./pages/Signin"
+import Signup from "./pages/Signup"
+import Shared from "./pages/Shared"
+import { AuthProvider } from "./context/AuthContext"
 
-import { useState } from 'react'
-import './App.css'
-import { AddContent } from './components/AddContent'
-import Cards from './components/Cards'
-import PlusIcon from './components/icons/PlusIcon'
-import ShareIcon from './components/icons/ShareIcon'
-import { Button } from './components/ui/Button'
-import Sidebar from './components/ui/Sidebar'
-
-function App() {
-
-  const [open, setOpen] =useState(false);
-
+const App = () => {
   return (
-
-    <div>
-      <AddContent open={open} onClose={setOpen}  />
-
-      <div className='flex'>
-        <Sidebar />
-        <div className='p-6 w-[85%]'>
-          <div className='flex justify-between  mx-auto pb-4'>
-            <h1 className='text-2xl font-semibold'>All Notes</h1>
-            <div className='flex gap-4'>
-              <Button
-                text='Add content'
-                variant='primary'
-                size='md'
-                onClick={() => setOpen(true)}
-                startIcon={<PlusIcon size='md' />}
-              />
-
-              <Button
-                text='share'
-                variant='secondary'
-                size='md'
-                startIcon={<ShareIcon size='md' />}
-                onClick={() => console.log("share btn waas clicked!")}
-              />
-
-            </div>
-          </div>
-          <Cards />
-        </div>
-      </div>
-    </div>
+    <>
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path='/login' element={<Signin />} />
+            <Route path='/signup' element={<Signup />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/api/v1/user/:shareId" element={<Shared />} />
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
+    </>
   )
 }
 
